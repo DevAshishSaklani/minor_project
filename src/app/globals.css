@@ -1,0 +1,122 @@
+@import "tailwindcss";
+
+/* CreatorBridge / Editorial Signal: warm paper, ink navy, signal orange, editorial asymmetry. */
+
+:root {
+  /* Light Mode (Default) */
+  --paper: #F5F1EA;
+  --paper-deep: #EAE3D8;
+  --ink: #172B3A;
+  --muted: #6E777B;
+  --orange: #F26B38;
+  --sage: #D9E5D7;
+  --lavender: #E5E0EE;
+  --white: #FFFDF9;
+  --line: #DCD5CA;
+  --shadow: 0 16px 45px rgba(35, 43, 47, 0.08);
+  --ease: cubic-bezier(.23, 1, .32, 1);
+  
+  /* Text colors for light backgrounds */
+  --text-on-light: #172B3A;
+  --muted-on-light: #6E777B;
+}
+
+.dark {
+  /* Dark Mode */
+  --paper: #0F1419;
+  --paper-deep: #1A1F26;
+  --ink: #E8E6E3;
+  --muted: #9BA1A6;
+  --orange: #FF7A45;
+  --sage: #B8D4B5;
+  --lavender: #D4C5E8;
+  --white: #FFFFFF;
+  --line: #2A2F35;
+  --shadow: 0 16px 45px rgba(0, 0, 0, 0.4);
+  
+  /* Text colors for light backgrounds in dark mode - PURE BLACK */
+  --text-on-light: #000000;
+  --muted-on-light: #1a1a1a;
+  
+  /* Text colors for dark sections that need to be inverted */
+  --text-on-dark: #0F1419;
+  --muted-on-dark: #2A2F35;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--paper);
+  font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 15px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Space Grotesk", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Smooth transitions for dark mode */
+* {
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-duration: 0.3s;
+  transition-timing-function: ease;
+}
+
+/* Preserve specific transitions */
+button,
+a {
+  transition: all 0.2s var(--ease);
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  border: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+a {
+  cursor: pointer;
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+/* Brand Mark */
+.brand-mark {
+  width: 28px;
+  height: 28px;
+  position: relative;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+/* Responsive utilities */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+  
+  .brand-mark {
+    width: 24px;
+    height: 24px;
+  }
+}
